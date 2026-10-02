@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Form</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+
+            background:
+                linear-gradient(rgba(0, 35, 65, .45), rgba(0, 35, 65, .45)),
+                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            min-height: 100vh;
+
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: linear-gradient(90deg, #0077B6, #00B4D8, #48CAE4);
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
+
+        }
+
+        nav {
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 15px 35px;
+
+        }
+
+        nav img {
+
+            width: 85px;
+
+            height: 60px;
+
+            border-radius: 10px;
+
+            object-fit: cover;
+
+            transition: .4s;
+
+        }
+
+        nav img:hover {
+
+            transform: scale(1.08) rotate(-3deg);
+
+        }
+
+        nav h1 {
+
+            flex: 1;
+
+            text-align: center;
+
+            color: white;
+
+            font-size: 30px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
+
+        }
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            margin-left: 25px;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            transition: .3s;
+
+        }
+
+        nav a:hover {
+
+            color: #FFE66D;
+
+        }
+
+        hr {
+
+            display: none;
+
+        }
+
+        /* ================= MAIN ================= */
+
+        main {
+
+            display: flex;
+
+            justify-content: center;
+
+            margin: 60px 20px;
+
+        }
+
+        /* ================= FORM ================= */
+
+        form {
+
+            width: 750px;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            background: rgba(255, 255, 255, .90);
+
+            backdrop-filter: blur(12px);
+
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .30);
+
+            animation: slideUp 1s ease;
+
+        }
+
+        form::before {
+
+            content: "🌴 Book Your Dream Vacation";
+
+            display: block;
+
+            text-align: center;
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            color: #0077B6;
+
+            margin-bottom: 35px;
+
+        }
+
+        /* ================= INPUTS ================= */
+
+        div {
+
+            margin-bottom: 22px;
+
+        }
+
+        label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-weight: 600;
+
+            color: #2d3436;
+
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=tel],
+        textarea,
+        select,
+        input[type=file] {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #cfd8dc;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+
+            font-family: 'Poppins', sans-serif;
+
+            transition: .3s;
+
+        }
+
+        textarea {
+
+            min-height: 120px;
+
+            resize: vertical;
+
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+
+            outline: none;
+
+            border-color: #00B4D8;
+
+            box-shadow: 0 0 12px rgba(0, 180, 216, .35);
+
+            transform: scale(1.01);
+
+        }
+
+        /* ================= RADIO ================= */
+
+        input[type=radio] {
+
+            margin-right: 6px;
+
+            margin-left: 14px;
+
+            transform: scale(1.15);
+
+        }
+
+        input[type=radio]:first-of-type {
+
+            margin-left: 0;
+
+        }
+
+        /* ================= BUTTONS ================= */
+
+        span {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            margin-top: 35px;
+
+        }
+
+        input[type=submit],
+        input[type=reset] {
+
+            border: none;
+
+            padding: 14px 40px;
+
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: .35s;
+
+        }
+
+        input[type=submit] {
+
+            background: linear-gradient(45deg, #00B4D8, #0077B6);
+
+            color: white;
+
+        }
+
+        input[type=submit]:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 12px 25px rgba(0, 180, 216, .45);
+
+        }
+
+        input[type=reset] {
+
+            background: linear-gradient(45deg, #ff6b6b, #ff9f43);
+
+            color: white;
+
+        }
+
+        input[type=reset]:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 12px 25px rgba(255, 107, 107, .4);
+
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #023E8A;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 22px;
+
+            margin-top: 60px;
+
+            font-size: 15px;
+
+        }
+
+        /* ================= ANIMATION ================= */
+
+        @keyframes slideUp {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(50px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:900px) {
+
+            nav {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 15px;
+
+            }
+
+            nav h1 {
+
+                width: 100%;
+
+                order: 3;
+
+                font-size: 22px;
+
+                margin-top: 10px;
+
+            }
+
+            nav a {
+
+                margin: 0 10px;
+
+            }
+
+            form {
+
+                width: 95%;
+
+                padding: 25px;
+
+            }
+
+            span {
+
+                flex-direction: column;
+
+            }
+
+            input[type=submit],
+            input[type=reset] {
+
+                width: 100%;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+
+        <nav>
+            <a href="/Travel_form/form.html"><img
+                    src="https://images.aircharterservice.com/global/aircraft-guide/private-charter/pilatus-pc-12-1.jpg"
+                    width="111"></a>
+            <h1>Welcome, you are just one decision away.</h1>
+            <a href="/Travel_form/list.html" target="_blank">List</a>
+            <a href="/Travel_form/table.html" target="_blank">Table</a>
+            <a href="/Travel_form/i_beg_you.mp4" target="_blank">Video</a>
+            <a href="/practice.html">Practice</a>
+            <hr>
+        </nav>
+    </header>
+
+    <main>
+        <form action="index.php" method="post">
+
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" autofocus>
+            </div>
+
+            <div>
+                <label for="phone-number">Phone number</label>
+                <input type="tel" id="phone-number" minlength="10" maxlength="10"
+                    placeholder="Don't use country code (+91)">
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email">
+            </div>
+
+            <div>
+                <label for="address">Address</label>
+                <textarea id="address" row="4" cols="100"></textarea>
+            </div>
+
+            <div>
+                <label name="location" for="location">Location to visit</label>
+                <select id="location">
+                    <option value="germany">Germany</option>
+                    <option value="australia">Australia</option>
+                    <option value="netherland" selected>Netherland</option>
+                    <option value="united-kingdom">United Kingdom</option>
+                    <option value="spain">Spain</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="payment">Select payment method</label> <br>
+
+                <label for="visa">Visa</label>
+                <input type="radio" value="visa" name="option" id="visa">
+
+                <label for="mastercard">Mastercard</label>
+                <input type="radio" value="mastercard" name="option" id="mastercard">
+
+                <label for="upi">Upi</label>
+                <input type="radio" value="upi" name="option" id="upi">
+            </div>
+
+            <div>
+                <label for="photo">Choose a photo you like to print on your ticket</label><br>
+                <input type="file" id="photo" accept="image/jpeg, image/png, image/jpg,">
+            </div>
+
+            <span>
+                <input type="submit">
+                <input type="reset">
+            </span>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>Harsh Kumar | All rights are reserved.</p>
+    </footer>
+
+</body>
+
+</html>

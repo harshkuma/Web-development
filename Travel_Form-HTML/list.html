@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Relax Remedies</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+
+            background:
+                linear-gradient(rgba(13, 27, 42, .55), rgba(13, 27, 42, .55)),
+                url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            color: #222;
+
+            overflow-x: hidden;
+
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, .12);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, .2);
+
+            animation: fadeDown 1s;
+
+        }
+
+        nav {
+
+            max-width: 1350px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 18px 40px;
+
+        }
+
+        nav img {
+
+            width: 75px;
+
+            height: 75px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            background: white;
+
+            padding: 6px;
+
+            transition: .5s;
+
+        }
+
+        nav img:hover {
+
+            transform: rotate(12deg) scale(1.1);
+
+        }
+
+        nav h1 {
+
+            flex: 1;
+
+            text-align: center;
+
+            color: white;
+
+            font-size: 34px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, .4);
+
+        }
+
+        nav a {
+
+            text-decoration: none;
+
+            color: white;
+
+            font-weight: 600;
+
+            margin-left: 28px;
+
+            transition: .35s;
+
+        }
+
+        nav a:hover {
+
+            color: #FFE082;
+
+            transform: translateY(-3px);
+
+        }
+
+        /* ================= MAIN ================= */
+
+        main {
+
+            width: 90%;
+
+            max-width: 1000px;
+
+            margin: 60px auto;
+
+            background: rgba(255, 255, 255, .18);
+
+            backdrop-filter: blur(20px);
+
+            border-radius: 25px;
+
+            padding: 45px;
+
+            box-shadow: 0 25px 45px rgba(0, 0, 0, .35);
+
+            animation: fadeUp 1.2s;
+
+        }
+
+        main h1 {
+
+            text-align: center;
+
+            color: white;
+
+            font-size: 42px;
+
+            margin-bottom: 30px;
+
+            text-shadow: 2px 2px 12px black;
+
+        }
+
+        main h2 {
+
+            color: #FFE082;
+
+            margin-top: 35px;
+
+            margin-bottom: 18px;
+
+            font-size: 26px;
+
+            position: relative;
+
+        }
+
+        main h2::after {
+
+            content: "";
+
+            display: block;
+
+            width: 90px;
+
+            height: 4px;
+
+            background: #FFE082;
+
+            margin-top: 8px;
+
+            border-radius: 20px;
+
+        }
+
+        /* ================= LISTS ================= */
+
+        ol,
+        ul,
+        dl {
+
+            background: rgba(255, 255, 255, .88);
+
+            border-radius: 18px;
+
+            padding: 25px 35px;
+
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+
+            transition: .4s;
+
+        }
+
+        ol:hover,
+        ul:hover,
+        dl:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 20px 35px rgba(0, 0, 0, .25);
+
+        }
+
+        li {
+
+            font-size: 18px;
+
+            margin: 14px 0;
+
+            transition: .3s;
+
+        }
+
+        li:hover {
+
+            color: #0077B6;
+
+            transform: translateX(12px);
+
+        }
+
+        dt {
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+            color: #0077B6;
+
+            margin-bottom: 12px;
+
+        }
+
+        dd {
+
+            margin-left: 25px;
+
+            margin-bottom: 10px;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            margin-top: 60px;
+
+            background: rgba(0, 0, 0, .75);
+
+            color: white;
+
+            text-align: center;
+
+            padding: 28px;
+
+        }
+
+        /* ================= FLOATING LEAVES ================= */
+
+        body::before {
+
+            content: "🍃 🍃 🍃 🍃 🍃";
+
+            position: fixed;
+
+            left: -15%;
+
+            top: 20%;
+
+            font-size: 45px;
+
+            animation: floatLeaves 18s linear infinite;
+
+            opacity: .35;
+
+            pointer-events: none;
+
+        }
+
+        body::after {
+
+            content: "🕊️";
+
+            position: fixed;
+
+            font-size: 55px;
+
+            right: -10%;
+
+            top: 10%;
+
+            animation: birdFly 22s linear infinite;
+
+            pointer-events: none;
+
+        }
+
+        /* ================= ANIMATIONS ================= */
+
+        @keyframes fadeDown {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(-60px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+        @keyframes fadeUp {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(70px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+        @keyframes floatLeaves {
+
+            0% {
+
+                transform: translateX(-150px) rotate(0deg);
+
+            }
+
+            100% {
+
+                transform: translateX(1700px) rotate(360deg);
+
+            }
+
+        }
+
+        @keyframes birdFly {
+
+            0% {
+
+                transform: translateX(150px) translateY(0);
+
+            }
+
+            25% {
+
+                transform: translateX(-300px) translateY(20px);
+
+            }
+
+            50% {
+
+                transform: translateX(-700px) translateY(-20px);
+
+            }
+
+            75% {
+
+                transform: translateX(-1200px) translateY(15px);
+
+            }
+
+            100% {
+
+                transform: translateX(-1700px);
+
+            }
+
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:900px) {
+
+            nav {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 15px;
+
+            }
+
+            nav h1 {
+
+                width: 100%;
+
+                order: 3;
+
+                font-size: 26px;
+
+                margin-top: 15px;
+
+            }
+
+            nav a {
+
+                margin: 0 10px;
+
+            }
+
+            main {
+
+                width: 95%;
+
+                padding: 25px;
+
+            }
+
+            main h1 {
+
+                font-size: 32px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/Projects/Travel_form/list.html"><img
+                    src="https://png.pngtree.com/png-clipart/20240903/original/pngtree-blank-checklist-paper-board-illustration-suitable-for-work-to-do-list-png-image_15919218.png"></a>
+            <h1>Lay your head and relax</h1>
+            <a href="/Projects/Travel_form/form.html" target="_blank">Sample Travel Form</a>
+            <a href="/Projects/Travel_form/video.html" target="_blank">Video</a>
+            <a href="/Projects/Travel_form/table.html" target="_blank">Sample Table</a>
+            <a href="/practice.html">Practice</a>
+        </nav>
+
+
+
+    </header>
+
+    <main>
+        <h1>Example of list in HTML</h1>
+
+        <h2>Give massage in this order.</h2>
+        <ol>
+            <li>Use coconut oil to massage head</li>
+            <li>Use coconut oil to massage shoulder</li>
+            <li>Use coconut oil to massage hand</li>
+            <li>Use coconut oil to massage back</li>
+            <li>Use coconut oil to massage leg</li>
+            <li>Use coconut oil to massage foot</li>
+        </ol>
+
+        <h2>Things you need to cook chicken soup.</h2>
+        <ul>
+            <li>Chicken</li>
+            <li>Water</li>
+            <li>Salt</li>
+            <li>Corn flour</li>
+            <li>Black pepper powder</li>
+        </ul>
+
+
+        <h2>Word Meaning,</h2>
+        <dl>
+            <dt>Harsh</dt>
+            <dd>Something that is rough or being rude</dd>
+            <dd>For example: Raj is so harsh. or That soap is so harsh for my skin.</dd>
+        </dl>
+    </main>
+
+    <footer>
+        <h3>
+            All rights reserved 2027.
+        </h3>
+    </footer>
+</body>
+
+</html>
